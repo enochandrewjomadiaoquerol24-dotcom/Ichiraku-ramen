@@ -1,5 +1,5 @@
 <?php
-// login.php
+
 require_once 'functions.php';
 if (is_logged_in()) header('Location: Final_landpage.php');
 
