@@ -1,5 +1,5 @@
 <?php
-// register.php
+
 require_once 'functions.php';
 if (is_logged_in()) header('Location: Final_landpage.php');
 
@@ -14,7 +14,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if ($fullname === '' || $username === '' || $password === '') {
         $msg = 'Please fill required fields.';
     } else {
-        // Insert customer info
+        
         $stmt = $mysqli->prepare("INSERT INTO customers_info (customer_name, customer_address, contact_number) VALUES (?, ?, ?)");
         $stmt->bind_param('sss', $fullname, $address, $contact);
         if ($stmt->execute()) {
